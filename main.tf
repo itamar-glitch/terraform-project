@@ -33,17 +33,3 @@ output "instance_public_IP" {
 
 
 
-
-resource "aws_instance" "example" {
-  ami           = var.client_ami
-  instance_type = var.client_server
-
-  tags = {
-    Name = "Itamar_instance"
-  }
-}
-
-output "instance_public_IP" {
-  description = "Instance public IP"
-  value       = aws_instance.example.public_ip
-}
