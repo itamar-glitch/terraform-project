@@ -9,7 +9,30 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
+
 }
+
+MODULE "ec2_instance{
+    source = "./modules/ec2"
+    ami = var.client_ami
+    instance=var.client_server
+}
+
+
+output "instance_public_IP" {
+  value       = module.ec2_instance.instance_public_IP
+}
+
+
+
+
+
+
+
+
+
+
+
 
 resource "aws_instance" "example" {
   ami           = var.client_ami
