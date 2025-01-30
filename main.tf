@@ -12,10 +12,10 @@ provider "aws" {
 
 }
 
-module "ec2_instance{
+module "ec2_instance"{
     source = "./modules/ec2"
     ami = var.client_ami
-    instance=var.client_server
+    value=var.client_server
 }
 
 
