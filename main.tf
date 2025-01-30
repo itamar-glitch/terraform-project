@@ -12,7 +12,7 @@ provider "aws" {
 
 }
 
-MODULE "ec2_instance{
+module "ec2_instance{
     source = "./modules/ec2"
     ami = var.client_ami
     instance=var.client_server
@@ -22,14 +22,3 @@ MODULE "ec2_instance{
 output "instance_public_IP" {
   value       = module.ec2_instance.instance_public_IP
 }
-
-
-
-
-
-
-
-
-
-
-
