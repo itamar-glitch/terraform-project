@@ -15,7 +15,7 @@ provider "aws" {
 module "ec2_instance"{
     source = "./modules/ec2"
     ami = var.client_ami
-    instance=var.client_server
+    instance_type =var.client_server
 }
 
 
